@@ -14,7 +14,9 @@
 ## Falta
 
 ### Próxima sesión
-- [ ] Configurar Git: nombre y correo, `git init`, `.gitignore`, `requirements.txt` y primer commit (**antes de descargar datos**)
+- [x] Configurar Git: nombre y correo, `git init`, `.gitignore`, `requirements.txt` y primer commit
+- [x] Publicar en GitHub: https://github.com/orirod2/public-procurement-analytics (público)
+- [ ] Agregar descripción al repositorio en GitHub
 - [ ] Activar Auto Save en VS Code
 - [ ] Decidir el alcance: se recomienda empezar con los módulos 2 (riesgo financiero) y 3 (favoritismo y planeación)
 - [ ] Escribir con mis palabras, para cada bandera roja elegida: qué significa, por qué indica riesgo y qué explicación inocente podría tener
