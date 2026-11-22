@@ -16,7 +16,10 @@
 ### Próxima sesión
 - [x] Configurar Git: nombre y correo, `git init`, `.gitignore`, `requirements.txt` y primer commit
 - [x] Publicar en GitHub: https://github.com/orirod2/public-procurement-analytics (público)
-- [ ] Agregar descripción al repositorio en GitHub
+- [x] Agregar descripción y topics al repositorio en GitHub
+- [x] README en inglés (README.md) y en español (README.es.md)
+- [x] Notebook 02_muestra_datos: primera descarga de 5 contratos con la API (usando params)
+- [ ] **Siguiente:** convertir la respuesta de la API en una tabla de polars y pasar valor_del_contrato de texto a número
 - [ ] Activar Auto Save en VS Code
 - [ ] Decidir el alcance: se recomienda empezar con los módulos 2 (riesgo financiero) y 3 (favoritismo y planeación)
 - [ ] Escribir con mis palabras, para cada bandera roja elegida: qué significa, por qué indica riesgo y qué explicación inocente podría tener
