@@ -11,21 +11,31 @@
   - [x] Borrador de indicadores de riesgo en 4 módulos (hecho con apoyo de IA, por revisar)
 - [x] Tema definido: pérdida de recursos, riesgo de corrupción y contratos inconclusos ("elefantes blancos")
 
+## Hecho (22 de noviembre de 2026)
+
+- [x] Notebook `02_muestra_datos`: respuesta de la API convertida en tabla de polars (DataFrame)
+- [x] `valor_del_contrato` convertido de texto a número (`Float64`); la API entrega todos los valores como texto
+- [x] Descargas reproducibles con `$order` y `timeout` en las peticiones
+- [x] Se detectó sesgo al ordenar por `id_contrato` (98 % de contratos de 2026); se ordena por `:id`, que da proporciones por año parecidas al total
+- [x] Muestra de 20.000 contratos con las 47 columnas guardada en `02_data/raw/muestra_20k.parquet` (datos crudos, sin modificar)
+
 ## Falta
 
-### Próxima sesión
+### Pendientes inmediatos
 - [x] Configurar Git: nombre y correo, `git init`, `.gitignore`, `requirements.txt` y primer commit
 - [x] Publicar en GitHub: https://github.com/orirod2/public-procurement-analytics (público)
 - [x] Agregar descripción y topics al repositorio en GitHub
 - [x] README en inglés (README.md) y en español (README.es.md)
 - [x] Notebook 02_muestra_datos: primera descarga de 5 contratos con la API (usando params)
-- [ ] **Siguiente:** convertir la respuesta de la API en una tabla de polars y pasar valor_del_contrato de texto a número
+- [x] Convertir la respuesta de la API en una tabla de polars y pasar valor_del_contrato de texto a número
+- [ ] **Siguiente:** abrir la muestra desde el archivo Parquet y medir qué tan completos vienen los datos
 - [ ] Activar Auto Save en VS Code
 - [ ] Decidir el alcance: se recomienda empezar con los módulos 2 (riesgo financiero) y 3 (favoritismo y planeación)
 - [ ] Escribir con mis palabras, para cada bandera roja elegida: qué significa, por qué indica riesgo y qué explicación inocente podría tener
 
 ### Datos
-- [ ] Descargar una muestra pequeña con la API (pocos miles de filas, solo las 47 columnas) y guardarla en Parquet en `02_data/raw`
+- [x] Descargar una muestra con la API (20.000 filas, las 47 columnas) y guardarla en Parquet en `02_data/raw`
+- [ ] Verificar si algún `valor_del_contrato` tiene decimales (para decidir entre `Float64` e `Int64`)
 - [ ] Medir qué tan completos vienen los datos, sobre todo las columnas de pagos (`valor_pagado`, `valor_facturado`, etc.)
 - [ ] Verificar si `nombre_representante_legal` corresponde a la entidad o al proveedor
 - [ ] Convertir `duraci_n_del_contrato` (texto, por ejemplo "87 Dia(s)") a número de días
