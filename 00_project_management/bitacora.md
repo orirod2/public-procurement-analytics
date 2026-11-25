@@ -3,7 +3,7 @@
 ## Hecho (21 de noviembre de 2026)
 
 - [x] Estructura de carpetas `00_project_management` a `06_reports` (se corrigieron los nombres que terminaban en ":")
-- [x] Entorno virtual `.venv` con polars, pandas, duckdb, httpx, pyarrow y matplotlib
+- [x] Entorno virtual `.venv` con polars, pandas, duckdb, httpx, pyarrow y matplotlib (reemplazado el 24 de noviembre, ver abajo)
 - [x] Notebook `03_notebooks/01_exploracion_metadatos.ipynb`:
   - [x] Consulta a la API de metadatos del dataset `jbjy-vk9h` (SECOP II - Contratos Electrónicos)
   - [x] Exploración de las 95 columnas (name, fieldName, tipo, descripción)
@@ -17,7 +17,25 @@
 - [x] `valor_del_contrato` convertido de texto a número (`Float64`); la API entrega todos los valores como texto
 - [x] Descargas reproducibles con `$order` y `timeout` en las peticiones
 - [x] Se detectó sesgo al ordenar por `id_contrato` (98 % de contratos de 2026); se ordena por `:id`, que da proporciones por año parecidas al total
-- [x] Muestra de 20.000 contratos con las 47 columnas guardada en `02_data/raw/muestra_20k.parquet` (datos crudos, sin modificar)
+- [x] Muestra de 20.000 contratos con las 47 columnas guardada en `02_data/raw/muestra_20k.parquet` (datos crudos, sin modificar; reemplazada el 25 de noviembre, ver abajo)
+
+## Hecho (24 de noviembre de 2026)
+
+- [x] Proyecto movido fuera de iCloud a `~/Proyectos/public-procurement-analytics` (iCloud dejaba archivos sin descargar y el kernel se colgaba)
+- [x] Entorno virtual nuevo fuera del proyecto, en `~/.venvs/elipsis`, con el kernel "Elipsis (Python 3.14)"
+- [x] Notebook `03_calidad_datos`: faltantes, subregistro de pagos y nota de limitaciones de SECOP II
+
+## Hecho (25 de noviembre de 2026)
+
+- [x] Se pausa la limpieza y se rehace el plan con fases (entorno, investigación, mapa de las 95 columnas, indicadores, limpieza reproducible, análisis y comunicación)
+- [x] Primer pull request en Elipsis (#1): exploración inicial de la limpieza (`04_limpieza.ipynb`)
+- [x] Fase 0 en la rama `fase0-entorno`:
+  - [x] Kernel de los notebooks 01 y 02 cambiado al entorno `elipsis`
+  - [x] `requirements.txt` solo con dependencias directas (polars, httpx, matplotlib, ipykernel); se quitan pandas, duckdb y pyarrow porque no se usan (duckdb podría volver en la fase 4)
+  - [x] `requirements-dev.txt` con pytest y ruff
+  - [x] Licencia MIT
+  - [x] README corto en las carpetas vacías
+- [x] Muestra nueva: volver a correr el notebook 02 sobrescribió la muestra del 22 de noviembre y no se pudo recuperar. SECOP II cambia a diario (por ejemplo, "terminado" pasó de 2.826 a 2.816). La muestra oficial es ahora `muestra_20k_2026-11-25.parquet` y el notebook 02 ya no sobrescribe un archivo existente. Las cifras de las notas se recalculan en la fase 2.
 
 ## Falta
 
@@ -62,4 +80,3 @@
 - Hablar de "indicadores de riesgo", no de "corrupción".
 - No publicar nombres ni documentos de personas.
 
-se quitan pandas, duckdb y pyarrow porque no se usan; duckdb podría volver en la fase 4
