@@ -61,3 +61,5 @@
 ## Recordatorios
 - Hablar de "indicadores de riesgo", no de "corrupción".
 - No publicar nombres ni documentos de personas.
+
+se quitan pandas, duckdb y pyarrow porque no se usan; duckdb podría volver en la fase 4
